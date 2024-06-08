@@ -52,6 +52,8 @@ CREATE TABLE Orders (
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(50) NOT NULL,
     total_amount DECIMAL(10, 2) NOT NULL,
+    delivery_address VARCHAR(255) NOT NULL,
+    payment_method VARCHAR(50),
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 
@@ -114,4 +116,19 @@ CREATE TABLE WishlistItems (
     product_id INT NOT NULL,
     FOREIGN KEY (wishlist_id) REFERENCES Wishlists(wishlist_id) ON DELETE CASCADE,
     FOREIGN KEY (product_id) REFERENCES Products(product_id) ON DELETE CASCADE
+);
+
+-- Таблица Ролей
+CREATE TABLE Roles (
+    role_id SERIAL PRIMARY KEY,
+    role_name VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- Таблица пользователей с ролями
+CREATE TABLE UserRoles (
+    user_role_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    role_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (role_id) REFERENCES Roles(role_id) ON DELETE CASCADE
 );
