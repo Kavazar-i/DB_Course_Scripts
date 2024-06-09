@@ -1,0 +1,11 @@
+product_name,username,rating,comment,review_date
+Product1,user1,2,Review for Product 1,2024-06-09T16:01:30.954495
+Product2,user2,3,Review for Product 2,2024-06-09T16:01:30.954501
+Product3,user3,4,Review for Product 3,2024-06-09T16:01:30.954503
+Product4,user4,5,Review for Product 4,2024-06-09T16:01:30.954505
+Product5,user5,1,Review for Product 5,2024-06-09T16:01:30.954506
+Product6,user6,2,Review for Product 6,2024-06-09T16:01:30.954507
+Product7,user7,3,Review for Product 7,2024-06-09T16:01:30.954509
+Product8,user8,4,Review for Product 8,2024-06-09T16:01:30.954514
+Product9,user9,5,Review for Product 9,2024-06-09T16:01:30.954515
+Product10,user10,1,Review for Product 10,2024-06-09T16:01:30.954517

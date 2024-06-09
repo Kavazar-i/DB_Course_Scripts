@@ -1,7 +1,7 @@
--- -- Создание базы данных DIY_Electronics_Kits
+-- Создание базы данных DIY_Electronics_Kits
 -- CREATE DATABASE DIY_Electronics_Kits;
 
--- -- Использование созданной базы данных
+-- Использование созданной базы данных
 -- \c DIY_Electronics_Kits;
 
 -- Таблица Пользователи

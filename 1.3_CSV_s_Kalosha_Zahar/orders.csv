@@ -1,0 +1,11 @@
+username,order_date,status,total_amount,delivery_address,payment_method,order_detail_product_name,order_detail_quantity,order_detail_price
+user1,2024-06-09T16:05:30.952616,Processing,101.0,Delivery Address 1,Credit Card,Product2,1,11.0
+user2,2024-06-09T17:01:30.952616,Processing,102.0,Delivery Address 2,Credit Card,Product3,2,12.0
+user3,2024-06-10T00:01:30.952616,Processing,103.0,Delivery Address 3,Credit Card,Product4,3,13.0
+user4,2024-06-10T16:01:30.952616,Processing,104.0,Delivery Address 4,Credit Card,Product5,4,14.0
+user5,2024-06-11T16:01:30.952616,Processing,105.0,Delivery Address 5,Credit Card,Product6,5,15.0
+user6,2024-06-12T16:01:30.952616,Processing,106.0,Delivery Address 6,Credit Card,Product7,6,16.0
+user7,2024-06-13T16:01:30.952616,Processing,107.0,Delivery Address 7,Credit Card,Product8,7,17.0
+user8,2024-06-14T16:01:30.952616,Processing,108.0,Delivery Address 8,Credit Card,Product9,8,18.0
+user9,2024-06-15T16:01:30.952616,Processing,109.0,Delivery Address 9,Credit Card,Product10,9,19.0
+user10,2024-06-16T16:01:30.952616,Processing,110.0,Delivery Address 10,Credit Card,Product1,10,20.0

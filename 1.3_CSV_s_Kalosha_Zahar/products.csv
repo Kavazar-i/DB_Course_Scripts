@@ -1,0 +1,11 @@
+name,description,price,stock_quantity,category_name
+Product1,Description for Product 1,11.0,101,Category2
+Product2,Description for Product 2,12.0,102,Category3
+Product3,Description for Product 3,13.0,103,Category4
+Product4,Description for Product 4,14.0,104,Category5
+Product5,Description for Product 5,15.0,105,Category6
+Product6,Description for Product 6,16.0,106,Category7
+Product7,Description for Product 7,17.0,107,Category8
+Product8,Description for Product 8,18.0,108,Category9
+Product9,Description for Product 9,19.0,109,Category10
+Product10,Description for Product 10,20.0,110,Category1
