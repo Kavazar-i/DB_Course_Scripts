@@ -132,3 +132,9 @@ CREATE TABLE UserRoles (
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (role_id) REFERENCES Roles(role_id) ON DELETE CASCADE
 );
+
+-- Add necessary constraints
+ALTER TABLE Orders ADD CONSTRAINT unique_user_order UNIQUE (user_id, order_date);
+ALTER TABLE OrderDetails ADD CONSTRAINT unique_order_product UNIQUE (order_id, product_id);
+ALTER TABLE Wishlists ADD CONSTRAINT unique_user_wishlist UNIQUE (user_id);
+ALTER TABLE WishlistItems ADD CONSTRAINT unique_wishlist_product UNIQUE (wishlist_id, product_id);
