@@ -20,7 +20,7 @@ CREATE TABLE UserProfiles (
     user_id INT NOT NULL,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    phone_number VARCHAR(20),
+    phone_number VARCHAR(22),
     address VARCHAR(255),
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
