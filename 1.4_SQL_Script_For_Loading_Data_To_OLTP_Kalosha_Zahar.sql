@@ -84,17 +84,17 @@ CREATE TEMP TABLE temp_user_roles (
 );
 
 -- Load data from CSV files into temporary tables
-\copy temp_users FROM '/path/to/users.csv' WITH CSV HEADER;
-\copy temp_user_profiles FROM '/path/to/user_profiles.csv' WITH CSV HEADER;
-\copy temp_categories FROM '/path/to/categories.csv' WITH CSV HEADER;
-\copy temp_products FROM '/path/to/products.csv' WITH CSV HEADER;
-\copy temp_orders FROM '/path/to/orders.csv' WITH CSV HEADER;
-\copy temp_suppliers FROM '/path/to/suppliers.csv' WITH CSV HEADER;
-\copy temp_product_suppliers FROM '/path/to/product_suppliers.csv' WITH CSV HEADER;
-\copy temp_reviews FROM '/path/to/reviews.csv' WITH CSV HEADER;
-\copy temp_wishlists FROM '/path/to/wishlists.csv' WITH CSV HEADER;
-\copy temp_roles FROM '/path/to/roles.csv' WITH CSV HEADER;
-\copy temp_user_roles FROM '/path/to/user_roles.csv' WITH CSV HEADER;
+COPY temp_users FROM '/path/to/users.csv' WITH CSV HEADER;
+COPY temp_user_profiles FROM '/path/to/user_profiles.csv' WITH CSV HEADER;
+COPY temp_categories FROM '/path/to/categories.csv' WITH CSV HEADER;
+COPY temp_products FROM '/path/to/products.csv' WITH CSV HEADER;
+COPY temp_orders FROM '/path/to/orders.csv' WITH CSV HEADER;
+COPY temp_suppliers FROM '/path/to/suppliers.csv' WITH CSV HEADER;
+COPY temp_product_suppliers FROM '/path/to/product_suppliers.csv' WITH CSV HEADER;
+COPY temp_reviews FROM '/path/to/reviews.csv' WITH CSV HEADER;
+COPY temp_wishlists FROM '/path/to/wishlists.csv' WITH CSV HEADER;
+COPY temp_roles FROM '/path/to/roles.csv' WITH CSV HEADER;
+COPY temp_user_roles FROM '/path/to/user_roles.csv' WITH CSV HEADER;
 
 -- Insert new data into main tables, converting types and handling duplicates
 -- Users table
@@ -143,9 +143,10 @@ DO $$
 DECLARE
     order_rec RECORD;
     product_rec RECORD;
+    v_order_id INTEGER;
 BEGIN
     FOR order_rec IN SELECT * FROM temp_orders LOOP
-        -- Insert order
+        -- Insert order and capture order_id
         INSERT INTO Orders (user_id, order_date, status, total_amount, delivery_address, payment_method)
         SELECT u.user_id,
                to_timestamp(order_rec.order_date, 'YYYY-MM-DD HH24:MI:SS')::timestamp,
@@ -156,12 +157,20 @@ BEGIN
         FROM Users u
         WHERE u.username = order_rec.username
         ON CONFLICT (user_id, order_date) DO NOTHING
-        RETURNING order_id INTO order_rec.order_id;
+        RETURNING order_id INTO v_order_id;
 
-        -- Insert order details
+        -- If the order was inserted or found (v_order_id is not null), insert order details
+        IF v_order_id IS NULL THEN
+            SELECT order_id INTO v_order_id
+            FROM Orders o
+            JOIN Users u ON u.user_id = o.user_id
+            WHERE u.username = order_rec.username
+              AND o.order_date = to_timestamp(order_rec.order_date, 'YYYY-MM-DD HH24:MI:SS')::timestamp;
+        END IF;
+
         FOR product_rec IN SELECT * FROM Products p WHERE p.name = order_rec.order_detail_product_name LOOP
             INSERT INTO OrderDetails (order_id, product_id, quantity, price)
-            VALUES (order_rec.order_id, product_rec.product_id, order_rec.order_detail_quantity::integer, order_rec.order_detail_price::numeric)
+            VALUES (v_order_id, product_rec.product_id, order_rec.order_detail_quantity::integer, order_rec.order_detail_price::numeric)
             ON CONFLICT (order_id, product_id) DO NOTHING;
         END LOOP;
     END LOOP;
@@ -205,20 +214,28 @@ DO $$
 DECLARE
     wishlist_rec RECORD;
     product_rec RECORD;
+    v_wishlist_id INTEGER;
 BEGIN
     FOR wishlist_rec IN SELECT * FROM temp_wishlists LOOP
-        -- Insert wishlist
+        -- Insert wishlist and capture wishlist_id
         INSERT INTO Wishlists (user_id, created_at)
         SELECT u.user_id, to_timestamp(wishlist_rec.created_at, 'YYYY-MM-DD HH24:MI:SS')::timestamp
         FROM Users u
         WHERE u.username = wishlist_rec.username
         ON CONFLICT (user_id) DO NOTHING
-        RETURNING wishlist_id INTO wishlist_rec.wishlist_id;
+        RETURNING wishlist_id INTO v_wishlist_id;
 
-        -- Insert wishlist items
+        -- If the wishlist was inserted or found (v_wishlist_id is not null), insert wishlist items
+        IF v_wishlist_id IS NULL THEN
+            SELECT wishlist_id INTO v_wishlist_id
+            FROM Wishlists w
+            JOIN Users u ON u.user_id = w.user_id
+            WHERE u.username = wishlist_rec.username;
+        END IF;
+
         FOR product_rec IN SELECT * FROM Products p WHERE p.name = wishlist_rec.wishlist_product_name LOOP
             INSERT INTO WishlistItems (wishlist_id, product_id)
-            VALUES (wishlist_rec.wishlist_id, product_rec.product_id)
+            VALUES (v_wishlist_id, product_rec.product_id)
             ON CONFLICT (wishlist_id, product_id) DO NOTHING;
         END LOOP;
     END LOOP;
