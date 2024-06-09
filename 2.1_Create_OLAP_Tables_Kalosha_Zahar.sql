@@ -1,3 +1,9 @@
+-- Создание базы данных Dim_DIY_Electronics_Kits
+-- CREATE DATABASE Dim_DIY_Electronics_Kits;
+
+-- Использование созданной базы данных
+-- \c `dim_DIY_Electronics_Kits;
+
 -- Таблица Пользователи
 CREATE TABLE DimUsers (
     user_id SERIAL PRIMARY KEY,
