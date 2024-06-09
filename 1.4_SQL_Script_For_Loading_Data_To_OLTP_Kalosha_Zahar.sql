@@ -97,34 +97,40 @@ COPY temp_roles FROM '/path/to/roles.csv' WITH CSV HEADER;
 COPY temp_user_roles FROM '/path/to/user_roles.csv' WITH CSV HEADER;
 
 -- Insert new data into main tables, converting types and handling duplicates
--- Users table
+-- Users table with email validation and data cleaning
 INSERT INTO Users (username, email, password, created_at, updated_at)
 SELECT DISTINCT username, email, password,
        to_timestamp(created_at, 'YYYY-MM-DD HH24:MI:SS')::timestamp,
        to_timestamp(updated_at, 'YYYY-MM-DD HH24:MI:SS')::timestamp
 FROM temp_users
-WHERE NOT EXISTS (
+WHERE email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$'
+  AND username IS NOT NULL AND email IS NOT NULL AND password IS NOT NULL
+  AND created_at IS NOT NULL AND updated_at IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM Users u WHERE u.email = temp_users.email
 );
 
--- UserProfiles table
+-- UserProfiles table with data cleaning
 INSERT INTO UserProfiles (user_id, first_name, last_name, phone_number, address)
 SELECT u.user_id, t.first_name, t.last_name, t.phone_number, t.address
 FROM temp_user_profiles t
 JOIN Users u ON u.username = t.username
-WHERE NOT EXISTS (
+WHERE t.first_name IS NOT NULL AND t.last_name IS NOT NULL
+  AND t.phone_number IS NOT NULL AND t.address IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM UserProfiles p WHERE p.user_id = u.user_id
 );
 
--- Categories table
+-- Categories table with data cleaning
 INSERT INTO Categories (name, description)
 SELECT DISTINCT name, description
 FROM temp_categories
-WHERE NOT EXISTS (
+WHERE name IS NOT NULL AND description IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM Categories c WHERE c.name = temp_categories.name
 );
 
--- Products table
+-- Products table with data cleaning
 INSERT INTO Products (name, description, price, stock_quantity, category_id, created_at, updated_at)
 SELECT t.name, t.description,
        t.price::numeric,
@@ -134,18 +140,25 @@ SELECT t.name, t.description,
        to_timestamp(t.updated_at, 'YYYY-MM-DD HH24:MI:SS')::timestamp
 FROM temp_products t
 LEFT JOIN Categories c ON c.name = t.category_name
-WHERE NOT EXISTS (
+WHERE t.name IS NOT NULL AND t.description IS NOT NULL
+  AND t.price IS NOT NULL AND t.stock_quantity IS NOT NULL
+  AND t.category_name IS NOT NULL AND t.created_at IS NOT NULL AND t.updated_at IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM Products p WHERE p.name = t.name
 );
 
--- Orders and OrderDetails tables
+-- Orders and OrderDetails tables with data cleaning
 DO $$
 DECLARE
     order_rec RECORD;
     product_rec RECORD;
     v_order_id INTEGER;
 BEGIN
-    FOR order_rec IN SELECT * FROM temp_orders LOOP
+    FOR order_rec IN SELECT * FROM temp_orders
+                    WHERE username IS NOT NULL AND order_date IS NOT NULL AND status IS NOT NULL
+                          AND total_amount IS NOT NULL AND delivery_address IS NOT NULL
+                          AND payment_method IS NOT NULL AND order_detail_product_name IS NOT NULL
+                          AND order_detail_quantity IS NOT NULL AND order_detail_price IS NOT NULL LOOP
         -- Insert order and capture order_id
         INSERT INTO Orders (user_id, order_date, status, total_amount, delivery_address, payment_method)
         SELECT u.user_id,
@@ -176,15 +189,18 @@ BEGIN
     END LOOP;
 END $$;
 
--- Suppliers table
+-- Suppliers table with email validation and data cleaning
 INSERT INTO Suppliers (name, contact_name, phone_number, email, address)
 SELECT DISTINCT name, contact_name, phone_number, email, address
 FROM temp_suppliers
-WHERE NOT EXISTS (
+WHERE email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$'
+  AND name IS NOT NULL AND contact_name IS NOT NULL
+  AND phone_number IS NOT NULL AND address IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM Suppliers s WHERE s.name = temp_suppliers.name
 );
 
--- ProductSuppliers table
+-- ProductSuppliers table with data cleaning
 INSERT INTO ProductSuppliers (product_id, supplier_id, supply_price, supply_date)
 SELECT p.product_id, s.supplier_id,
        t.supply_price::numeric,
@@ -192,11 +208,12 @@ SELECT p.product_id, s.supplier_id,
 FROM temp_product_suppliers t
 JOIN Products p ON p.name = t.product_name
 JOIN Suppliers s ON s.name = t.supplier_name
-WHERE NOT EXISTS (
+WHERE t.supply_price IS NOT NULL AND t.supply_date IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM ProductSuppliers ps WHERE ps.product_id = p.product_id AND ps.supplier_id = s.supplier_id
 );
 
--- Reviews table
+-- Reviews table with data cleaning
 INSERT INTO Reviews (product_id, user_id, rating, comment, review_date)
 SELECT p.product_id, u.user_id,
        t.rating::integer,
@@ -205,18 +222,21 @@ SELECT p.product_id, u.user_id,
 FROM temp_reviews t
 JOIN Products p ON p.name = t.product_name
 JOIN Users u ON u.username = t.username
-WHERE NOT EXISTS (
+WHERE t.rating IS NOT NULL AND t.comment IS NOT NULL AND t.review_date IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM Reviews r WHERE r.product_id = p.product_id AND r.user_id = u.user_id
 );
 
--- Wishlists and WishlistItems tables
+-- Wishlists and WishlistItems tables with data cleaning
 DO $$
 DECLARE
     wishlist_rec RECORD;
     product_rec RECORD;
     v_wishlist_id INTEGER;
 BEGIN
-    FOR wishlist_rec IN SELECT * FROM temp_wishlists LOOP
+    FOR wishlist_rec IN SELECT * FROM temp_wishlists
+                        WHERE username IS NOT NULL AND created_at IS NOT NULL
+                              AND wishlist_product_name IS NOT NULL LOOP
         -- Insert wishlist and capture wishlist_id
         INSERT INTO Wishlists (user_id, created_at)
         SELECT u.user_id, to_timestamp(wishlist_rec.created_at, 'YYYY-MM-DD HH24:MI:SS')::timestamp
@@ -241,21 +261,23 @@ BEGIN
     END LOOP;
 END $$;
 
--- Roles table
+-- Roles table with data cleaning
 INSERT INTO Roles (role_name)
 SELECT DISTINCT role_name
 FROM temp_roles
-WHERE NOT EXISTS (
+WHERE role_name IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM Roles r WHERE r.role_name = temp_roles.role_name
 );
 
--- UserRoles table
+-- UserRoles table with data cleaning
 INSERT INTO UserRoles (user_id, role_id)
 SELECT u.user_id, r.role_id
 FROM temp_user_roles t
 JOIN Users u ON u.username = t.username
 JOIN Roles r ON r.role_name = t.role_name
-WHERE NOT EXISTS (
+WHERE t.role_name IS NOT NULL
+  AND NOT EXISTS (
     SELECT 1 FROM UserRoles ur WHERE ur.user_id = u.user_id AND ur.role_id = r.role_id
 );
 
@@ -271,4 +293,3 @@ DROP TABLE temp_reviews;
 DROP TABLE temp_wishlists;
 DROP TABLE temp_roles;
 DROP TABLE temp_user_roles;
-
