@@ -1,11 +1,191 @@
 username,order_date,status,total_amount,delivery_address,payment_method,order_detail_product_name,order_detail_quantity,order_detail_price
-user1,2024-06-09 16:05:30.952616,Processing,101.0,Delivery Address 1,Credit Card,Product2,1,11.0
-user2,2024-06-09 17:01:30.952616,Processing,102.0,Delivery Address 2,Credit Card,Product3,2,12.0
-user3,2024-06-10 00:01:30.952616,Processing,103.0,Delivery Address 3,Credit Card,Product4,3,13.0
-user4,2024-06-10 16:01:30.952616,Processing,104.0,Delivery Address 4,Credit Card,Product5,4,14.0
-user5,2024-06-11 16:01:30.952616,Processing,105.0,Delivery Address 5,Credit Card,Product6,5,15.0
-user6,2024-06-12 16:01:30.952616,Processing,106.0,Delivery Address 6,Credit Card,Product7,6,16.0
-user7,2024-06-13 16:01:30.952616,Processing,107.0,Delivery Address 7,Credit Card,Product8,7,17.0
-user8,2024-06-14 16:01:30.952616,Processing,108.0,Delivery Address 8,Credit Card,Product9,8,18.0
-user9,2024-06-15 16:01:30.952616,Processing,109.0,Delivery Address 9,Credit Card,Product10,9,19.0
-user10,2024-06-16 16:01:30.952616,Processing,110.0,Delivery Address 10,Credit Card,Product1,10,20.0
+hallrebecca,2024-03-02 00:52:51.643955,Shipped,728,"21973 Valerie Camp Apt. 212
+Colonland, TX 62050",PayPal,Microcontroller Board,6,189.24
+hallrebecca,2024-03-02 00:52:51.643955,Shipped,728,"21973 Valerie Camp Apt. 212
+Colonland, TX 62050",PayPal,Microcontroller Board,6,189.24
+hallrebecca,2024-03-02 00:52:51.643955,Shipped,728,"21973 Valerie Camp Apt. 212
+Colonland, TX 62050",PayPal,Microcontroller Board,6,189.24
+hallrebecca,2024-03-02 00:52:51.643955,Shipped,728,"21973 Valerie Camp Apt. 212
+Colonland, TX 62050",PayPal,Microcontroller Board,6,189.24
+veronica01,2024-04-27 21:13:49.082555,Delivered,85,"97156 Weeks Canyon
+Sullivanfurt, FL 97234",Credit Card,Jumper Wires Pack,10,437.93
+veronica01,2024-04-27 21:13:49.082555,Delivered,85,"97156 Weeks Canyon
+Sullivanfurt, FL 97234",Credit Card,Jumper Wires Pack,10,437.93
+evansdana,2024-04-23 12:02:48.512385,Delivered,228,"7586 Lori Plain Apt. 669
+Chelseaberg, NJ 67686",Bitcoin,Servo Motor Pack,4,235.89
+evansdana,2024-04-23 12:02:48.512385,Delivered,228,"7586 Lori Plain Apt. 669
+Chelseaberg, NJ 67686",Bitcoin,Servo Motor Pack,4,235.89
+evansdana,2024-04-23 12:02:48.512385,Delivered,228,"7586 Lori Plain Apt. 669
+Chelseaberg, NJ 67686",Bitcoin,Servo Motor Pack,4,235.89
+veronica01,2024-05-30 04:45:28.021040,Pending,148,"4133 Pamela Extension
+Christinaland, MD 46468",PayPal,Arduino Starter Kit,4,207.24
+veronica01,2024-05-30 04:45:28.021040,Pending,148,"4133 Pamela Extension
+Christinaland, MD 46468",PayPal,Arduino Starter Kit,4,207.24
+veronica01,2024-05-30 04:45:28.021040,Pending,148,"4133 Pamela Extension
+Christinaland, MD 46468",PayPal,Arduino Starter Kit,4,207.24
+kperez,2024-02-10 13:05:44.700504,Pending,464,"6323 Thompson Mission Apt. 968
+Gallowayland, MA 54327",PayPal,Sensor Module Set,10,117.54
+kperez,2024-02-10 13:05:44.700504,Pending,464,"6323 Thompson Mission Apt. 968
+Gallowayland, MA 54327",PayPal,Sensor Module Set,10,117.54
+kperez,2024-02-10 13:05:44.700504,Pending,464,"6323 Thompson Mission Apt. 968
+Gallowayland, MA 54327",PayPal,Sensor Module Set,10,117.54
+kperez,2024-02-10 13:05:44.700504,Pending,464,"6323 Thompson Mission Apt. 968
+Gallowayland, MA 54327",PayPal,Sensor Module Set,10,117.54
+kperez,2024-02-10 13:05:44.700504,Pending,464,"6323 Thompson Mission Apt. 968
+Gallowayland, MA 54327",PayPal,Sensor Module Set,10,117.54
+evansdana,2024-03-24 02:54:44.562187,Cancelled,908,"08211 Delgado Expressway
+Jamieburgh, VI 19638",PayPal,Stepper Motor Kit,5,225.39
+evansdana,2024-03-24 02:54:44.562187,Cancelled,908,"08211 Delgado Expressway
+Jamieburgh, VI 19638",PayPal,Stepper Motor Kit,5,225.39
+evansdana,2024-03-24 02:54:44.562187,Cancelled,908,"08211 Delgado Expressway
+Jamieburgh, VI 19638",PayPal,Stepper Motor Kit,5,225.39
+allisonrojas,2024-01-18 02:50:05.739910,Shipped,498,"8492 Yu Run Apt. 840
+Danielleton, MH 10781",Credit Card,Sensor Module Set,10,117.54
+allisonrojas,2024-01-18 02:50:05.739910,Shipped,498,"8492 Yu Run Apt. 840
+Danielleton, MH 10781",Credit Card,Sensor Module Set,10,117.54
+allisonrojas,2024-01-18 02:50:05.739910,Shipped,498,"8492 Yu Run Apt. 840
+Danielleton, MH 10781",Credit Card,Sensor Module Set,10,117.54
+allisonrojas,2024-01-18 02:50:05.739910,Shipped,498,"8492 Yu Run Apt. 840
+Danielleton, MH 10781",Credit Card,Sensor Module Set,10,117.54
+john64,2024-01-23 17:23:37.736135,Delivered,832,"661 Joshua Forks
+North Cynthia, MT 68015",Credit Card,Arduino Starter Kit,2,207.24
+awilliams,2024-05-09 03:12:51.970753,Delivered,444,"76251 Matthew Points Suite 855
+Port Sara, KS 53975",Bitcoin,Transistor Assortment,10,177.34
+awilliams,2024-05-09 03:12:51.970753,Delivered,444,"76251 Matthew Points Suite 855
+Port Sara, KS 53975",Bitcoin,Transistor Assortment,10,177.34
+awilliams,2024-05-09 03:12:51.970753,Delivered,444,"76251 Matthew Points Suite 855
+Port Sara, KS 53975",Bitcoin,Transistor Assortment,10,177.34
+awilliams,2024-05-09 03:12:51.970753,Delivered,444,"76251 Matthew Points Suite 855
+Port Sara, KS 53975",Bitcoin,Transistor Assortment,10,177.34
+awilliams,2024-05-09 03:12:51.970753,Delivered,444,"76251 Matthew Points Suite 855
+Port Sara, KS 53975",Bitcoin,Transistor Assortment,10,177.34
+evansdana,2024-04-11 00:27:16.091096,Delivered,125,"73955 Chloe Coves Suite 540
+East Dustin, WY 06337",Credit Card,Prototype Shield,7,142.31
+evansdana,2024-04-11 00:27:16.091096,Delivered,125,"73955 Chloe Coves Suite 540
+East Dustin, WY 06337",Credit Card,Prototype Shield,7,142.31
+evansdana,2024-04-11 00:27:16.091096,Delivered,125,"73955 Chloe Coves Suite 540
+East Dustin, WY 06337",Credit Card,Prototype Shield,7,142.31
+evansdana,2024-02-29 22:19:40.580591,Shipped,896,"202 Johnson Pike
+Port Christianville, ND 94058",Credit Card,Transistor Assortment,2,177.34
+evansdana,2024-02-29 22:19:40.580591,Shipped,896,"202 Johnson Pike
+Port Christianville, ND 94058",Credit Card,Transistor Assortment,2,177.34
+evansdana,2024-02-29 22:19:40.580591,Shipped,896,"202 Johnson Pike
+Port Christianville, ND 94058",Credit Card,Transistor Assortment,2,177.34
+evansdana,2024-02-29 22:19:40.580591,Shipped,896,"202 Johnson Pike
+Port Christianville, ND 94058",Credit Card,Transistor Assortment,2,177.34
+kperez,2024-04-27 08:15:09.931879,Delivered,966,"2719 Michelle Spurs Suite 619
+New Tiffanystad, DE 02884",Credit Card,Microcontroller Board,8,189.24
+hallrebecca,2024-01-01 09:46:48.492467,Pending,675,"86801 Garner Station
+Ericksonhaven, NY 77799",Bitcoin,ED Assortment,7,99.9
+hallrebecca,2024-01-01 09:46:48.492467,Pending,675,"86801 Garner Station
+Ericksonhaven, NY 77799",Bitcoin,ED Assortment,7,99.9
+hallrebecca,2024-01-01 09:46:48.492467,Pending,675,"86801 Garner Station
+Ericksonhaven, NY 77799",Bitcoin,ED Assortment,7,99.9
+hallrebecca,2024-01-01 09:46:48.492467,Pending,675,"86801 Garner Station
+Ericksonhaven, NY 77799",Bitcoin,ED Assortment,7,99.9
+hallrebecca,2024-03-02 22:59:48.511757,Delivered,624,"PSC 8485, Box 1893
+APO AA 66444",Credit Card,Servo Motor Pack,8,235.89
+hallrebecca,2024-03-02 22:59:48.511757,Delivered,624,"PSC 8485, Box 1893
+APO AA 66444",Credit Card,Servo Motor Pack,8,235.89
+hallrebecca,2024-03-02 22:59:48.511757,Delivered,624,"PSC 8485, Box 1893
+APO AA 66444",Credit Card,Servo Motor Pack,8,235.89
+hallrebecca,2024-03-02 22:59:48.511757,Delivered,624,"PSC 8485, Box 1893
+APO AA 66444",Credit Card,Servo Motor Pack,8,235.89
+evansdana,2024-05-20 00:03:28.549926,Delivered,918,"809 Peter Vista
+West Jasonland, TX 56672",PayPal,Jumper Wires Pack,7,437.93
+veronica01,2024-02-03 15:43:17.171315,Pending,495,"79975 Leslie Fords Suite 345
+New Brianmouth, CA 85718",Bitcoin,USB Cable Set,9,28.58
+veronica01,2024-02-03 15:43:17.171315,Pending,495,"79975 Leslie Fords Suite 345
+New Brianmouth, CA 85718",Bitcoin,USB Cable Set,9,28.58
+veronica01,2024-02-03 15:43:17.171315,Pending,495,"79975 Leslie Fords Suite 345
+New Brianmouth, CA 85718",Bitcoin,USB Cable Set,9,28.58
+allisonrojas,2024-01-05 08:23:35.423959,Shipped,466,"Unit 9843 Box 6340
+DPO AP 02656",PayPal,Power Supply Module,9,432.38
+allisonrojas,2024-01-05 08:23:35.423959,Shipped,466,"Unit 9843 Box 6340
+DPO AP 02656",PayPal,Power Supply Module,9,432.38
+allisonrojas,2024-01-05 08:23:35.423959,Shipped,466,"Unit 9843 Box 6340
+DPO AP 02656",PayPal,Power Supply Module,9,432.38
+allisonrojas,2024-01-05 08:23:35.423959,Shipped,466,"Unit 9843 Box 6340
+DPO AP 02656",PayPal,Power Supply Module,9,432.38
+kperez,2024-05-19 17:27:21.635227,Delivered,29,"234 Goodwin Port Apt. 145
+Lake Brianport, MN 66994",PayPal,Arduino Starter Kit,9,207.24
+kperez,2024-05-19 17:27:21.635227,Delivered,29,"234 Goodwin Port Apt. 145
+Lake Brianport, MN 66994",PayPal,Arduino Starter Kit,9,207.24
+kperez,2024-05-19 17:27:21.635227,Delivered,29,"234 Goodwin Port Apt. 145
+Lake Brianport, MN 66994",PayPal,Arduino Starter Kit,9,207.24
+kperez,2024-05-19 17:27:21.635227,Delivered,29,"234 Goodwin Port Apt. 145
+Lake Brianport, MN 66994",PayPal,Arduino Starter Kit,9,207.24
+kperez,2024-05-19 17:27:21.635227,Delivered,29,"234 Goodwin Port Apt. 145
+Lake Brianport, MN 66994",PayPal,Arduino Starter Kit,9,207.24
+john64,2024-04-13 10:30:18.611930,Delivered,874,"3533 Wood Causeway
+New Meganstad, ND 15268",Credit Card,Arduino Starter Kit,9,207.24
+john64,2024-04-13 10:30:18.611930,Delivered,874,"3533 Wood Causeway
+New Meganstad, ND 15268",Credit Card,Arduino Starter Kit,9,207.24
+john64,2024-04-13 10:30:18.611930,Delivered,874,"3533 Wood Causeway
+New Meganstad, ND 15268",Credit Card,Arduino Starter Kit,9,207.24
+veronica01,2024-03-20 17:05:53.373154,Pending,541,"PSC 2108, Box 7154
+APO AP 51572",PayPal,Jumper Wires Pack,10,437.93
+veronica01,2024-03-20 17:05:53.373154,Pending,541,"PSC 2108, Box 7154
+APO AP 51572",PayPal,Jumper Wires Pack,10,437.93
+hallrebecca,2024-05-22 08:45:28.616246,Pending,189,"7795 Melissa Fall
+Sandraborough, SD 82696",Credit Card,Soldering Iron Kit,8,63.39
+qstone,2024-01-28 02:38:45.135708,Pending,265,"4330 John Forge
+Butlerfurt, NH 26358",Credit Card,Transistor Assortment,7,177.34
+qstone,2024-01-28 02:38:45.135708,Pending,265,"4330 John Forge
+Butlerfurt, NH 26358",Credit Card,Transistor Assortment,7,177.34
+qstone,2024-01-28 02:38:45.135708,Pending,265,"4330 John Forge
+Butlerfurt, NH 26358",Credit Card,Transistor Assortment,7,177.34
+awilliams,2024-01-20 10:03:40.622691,Pending,317,"81537 Wilson Track
+Coxfurt, DC 45531",PayPal,Servo Motor Pack,8,235.89
+awilliams,2024-01-20 10:03:40.622691,Pending,317,"81537 Wilson Track
+Coxfurt, DC 45531",PayPal,Servo Motor Pack,8,235.89
+awilliams,2024-01-20 10:03:40.622691,Pending,317,"81537 Wilson Track
+Coxfurt, DC 45531",PayPal,Servo Motor Pack,8,235.89
+hallrebecca,2024-01-23 02:09:25.778141,Delivered,156,"PSC 0330, Box 9158
+APO AA 39904",Credit Card,Breadboard Set,10,94.48
+hallrebecca,2024-01-23 02:09:25.778141,Delivered,156,"PSC 0330, Box 9158
+APO AA 39904",Credit Card,Breadboard Set,10,94.48
+allisonrojas,2024-02-12 04:06:52.645364,Shipped,588,"862 Alvarez Ford
+Mendozaport, CT 04845",PayPal,Servo Motor Pack,8,235.89
+allisonrojas,2024-02-12 04:06:52.645364,Shipped,588,"862 Alvarez Ford
+Mendozaport, CT 04845",PayPal,Servo Motor Pack,8,235.89
+allisonrojas,2024-02-12 04:06:52.645364,Shipped,588,"862 Alvarez Ford
+Mendozaport, CT 04845",PayPal,Servo Motor Pack,8,235.89
+allisonrojas,2024-02-12 04:06:52.645364,Shipped,588,"862 Alvarez Ford
+Mendozaport, CT 04845",PayPal,Servo Motor Pack,8,235.89
+allisonrojas,2024-02-12 04:06:52.645364,Shipped,588,"862 Alvarez Ford
+Mendozaport, CT 04845",PayPal,Servo Motor Pack,8,235.89
+kperez,2024-02-29 00:05:21.343716,Pending,851,"770 Fuentes Summit Suite 568
+Wardhaven, AK 29466",Credit Card,Power Supply Module,2,432.38
+kperez,2024-02-29 00:05:21.343716,Pending,851,"770 Fuentes Summit Suite 568
+Wardhaven, AK 29466",Credit Card,Power Supply Module,2,432.38
+hallrebecca,2024-05-05 10:07:11.101985,Pending,569,"26528 Rogers Corner Suite 234
+Holttown, MS 95647",Credit Card,Jumper Wires Pack,9,437.93
+hallrebecca,2024-05-05 10:07:11.101985,Pending,569,"26528 Rogers Corner Suite 234
+Holttown, MS 95647",Credit Card,Jumper Wires Pack,9,437.93
+hallrebecca,2024-05-05 10:07:11.101985,Pending,569,"26528 Rogers Corner Suite 234
+Holttown, MS 95647",Credit Card,Jumper Wires Pack,9,437.93
+hallrebecca,2024-05-05 10:07:11.101985,Pending,569,"26528 Rogers Corner Suite 234
+Holttown, MS 95647",Credit Card,Jumper Wires Pack,9,437.93
+hallrebecca,2024-05-05 10:07:11.101985,Pending,569,"26528 Rogers Corner Suite 234
+Holttown, MS 95647",Credit Card,Jumper Wires Pack,9,437.93
+allisonrojas,2024-01-17 17:24:36.634351,Pending,735,"196 Hodges Road Apt. 821
+Lake Davidfort, CA 32619",Bitcoin,Power Supply Module,3,432.38
+allisonrojas,2024-04-08 07:39:17.977381,Cancelled,93,"8761 Allen Causeway
+Lake Lindsay, NE 80671",PayPal,Jumper Wires Pack,1,437.93
+allisonrojas,2024-04-08 07:39:17.977381,Cancelled,93,"8761 Allen Causeway
+Lake Lindsay, NE 80671",PayPal,Jumper Wires Pack,1,437.93
+allisonrojas,2024-04-08 07:39:17.977381,Cancelled,93,"8761 Allen Causeway
+Lake Lindsay, NE 80671",PayPal,Jumper Wires Pack,1,437.93
+allisonrojas,2024-04-08 07:39:17.977381,Cancelled,93,"8761 Allen Causeway
+Lake Lindsay, NE 80671",PayPal,Jumper Wires Pack,1,437.93
+veronica01,2024-01-19 23:54:34.391662,Shipped,240,"32790 Sherry Pike
+South Justinland, DC 23465",Credit Card,Capacitor Kit,8,270.3
+veronica01,2024-01-19 23:54:34.391662,Shipped,240,"32790 Sherry Pike
+South Justinland, DC 23465",Credit Card,Capacitor Kit,8,270.3
+veronica01,2024-01-19 23:54:34.391662,Shipped,240,"32790 Sherry Pike
+South Justinland, DC 23465",Credit Card,Capacitor Kit,8,270.3
+veronica01,2024-01-19 23:54:34.391662,Shipped,240,"32790 Sherry Pike
+South Justinland, DC 23465",Credit Card,Capacitor Kit,8,270.3
+veronica01,2024-01-19 23:54:34.391662,Shipped,240,"32790 Sherry Pike
+South Justinland, DC 23465",Credit Card,Capacitor Kit,8,270.3

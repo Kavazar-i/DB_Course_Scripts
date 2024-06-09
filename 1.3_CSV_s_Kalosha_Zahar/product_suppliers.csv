@@ -1,11 +1,21 @@
 product_name,supplier_name,supply_price,supply_date
-Product1,Supplier1,9.0,2024-06-09 16:01:30.952616
-Product2,Supplier2,10.0,2024-06-09 16:01:30.952625
-Product3,Supplier3,11.0,2024-06-09 16:01:30.952630
-Product4,Supplier4,12.0,2024-06-09 16:01:30.952634
-Product5,Supplier5,13.0,2024-06-09 16:01:30.952637
-Product6,Supplier6,14.0,2024-06-09 16:01:30.952643
-Product7,Supplier7,15.0,2024-06-09 16:01:30.952647
-Product8,Supplier8,16.0,2024-06-09 16:01:30.952653
-Product9,Supplier9,17.0,2024-06-09 16:01:30.952656
-Product10,Supplier10,18.0,2024-06-09 16:01:30.952660
+Arduino Starter Kit,Hughes-Hill,225.12,2024-06-07 12:04:49.549319
+Raspberry Pi Model,Hughes-Hill,185.44,2024-05-18 07:27:04.620446
+Soldering Iron Kit,"Estes, Jensen and Zavala",10.76,2024-02-13 11:56:56.251790
+Breadboard Set,Hughes-Hill,151.0,2024-05-09 07:27:12.215702
+Jumper Wires Pack,Hughes-Hill,76.97,2024-01-06 10:13:41.206542
+ED Assortment,Hughes-Hill,159.05,2024-01-23 14:38:03.635796
+Resistor Kit,"Estes, Jensen and Zavala",296.91,2024-01-24 03:47:54.343575
+Capacitor Kit,"Estes, Jensen and Zavala",40.39,2024-05-24 15:48:41.074843
+Sensor Module Set,Hughes-Hill,297.03,2024-05-06 22:53:18.610430
+Microcontroller Board,"Estes, Jensen and Zavala",239.66,2024-03-08 10:45:40.330623
+Servo Motor Pack,"Estes, Jensen and Zavala",82.7,2024-03-05 15:04:01.506914
+Stepper Motor Kit,"Estes, Jensen and Zavala",112.41,2024-05-07 13:27:34.346885
+Power Supply Module,Hughes-Hill,76.62,2024-04-20 07:03:56.063620
+USB Cable Set,Hughes-Hill,182.43,2024-01-25 04:23:06.176409
+Multimeter,"Estes, Jensen and Zavala",223.35,2024-01-19 00:13:32.204729
+LCD Display Module,Gonzalez-Carter,175.98,2024-04-01 19:27:50.679319
+WiFi Module,Hughes-Hill,83.24,2024-02-10 09:28:04.075308
+Battery Holder Pack,Hughes-Hill,231.08,2024-04-11 12:22:27.262901
+Prototype Shield,Gonzalez-Carter,216.81,2024-03-20 12:01:20.426472
+Transistor Assortment,"Estes, Jensen and Zavala",30.72,2024-04-08 10:57:14.024616
